@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Validations</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #fff;
+      }
+      .form-container {
+        text-align: left;
+        width: 400px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        border-radius: 10px;
+      }
+      .form-container h2 {
+        text-align: center;
+      }
+      .form-container .form-group {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+      .form-container .form-group label {
+        flex: 0 0 120px;
+        margin-right: 10px;
+      }
+      .form-container .form-group input[type="text"],
+      .form-container .form-group input[type="email"],
+      .form-container .form-group input[type="password"],
+      .form-container .form-group select {
+        flex: 1;
+        padding: 8px;
+      }
+      .form-container .form-group .radio-group {
+        display: flex;
+        align-items: center;
+      }
+      .form-container .form-group .checkbox-group {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .form-container .form-group .radio-group label,
+      .form-container .form-group .checkbox-group label {
+        margin-right: 20px;
+      }
+      .form-container .form-group .radio-group input,
+      .form-container .form-group .checkbox-group input {
+        margin-right: 5px;
+      }
+      .form-container .form-group .checkbox-group {
+        flex-direction: row;
+      }
+      .form-container .form-group .checkbox-group label {
+        width: 50%;
+        margin-bottom: 10px;
+      }
+      .form-container .form-group-submit {
+        display: flex;
+        justify-content: space-between;
+      }
+      .form-container .password-info {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        margin-left: 5px;
+      }
+      .form-container .password-info:hover .password-tooltip {
+        display: block;
+      }
+      .form-container .password-tooltip {
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        padding: 10px;
+        width: 250px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+        cursor: pointer;
+      }
+      .form-container .password-tooltip ul {
+        margin: 0;
+        padding-left: 20px;
+      }
+      .form-container .password-tooltip ul li {
+        list-style-type: disc;
+      }
+      .required {
+        color: red;
+      }
+      .primary-button {
+        background-color: #275fcf;
+        color: #fff;
+        padding: 10px 30px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .secondary-button {
+        background-color: #6c757d;
+        color: #fff;
+        padding: 10px 30px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>Registration Form</h2>
+      <form id="registrationForm">
+        <div class="form-group">
+          <label for="name">Name:<span class="required">*</span></label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email:<span class="required">*</span></label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password:<span class="required">*</span></label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            minlength="8"
+            pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}"
+            title="Password must contain: minimum 8 characters, at least one uppercase letter, one lowercase letter, one number, and one special character."
+          />
+          <div class="password-info">
+            &#9432;
+            <div class="password-tooltip">
+              <ul>
+                <li>Password should contain minimum 8 characters</li>
+                <li>At least one special character</li>
+                <li>At least one uppercase letter</li>
+                <li>At least one lowercase letter</li>
+                <li>At least one number</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="state">State:</label>
+          <select id="state" name="state" required>
+            <option value="">Select a state</option>
+            <option value="s1">Telangana</option>
+            <option value="s2">Karnataka</option>
+            <option value="s3">Maharashtra</option>
+            <option value="s4">Tamil Nadu</option>
+            <option value="s5">Kerala</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Gender:</label>
+          <div class="radio-group">
+            <label>
+              <input
+                type="radio"
+                id="male"
+                name="gender"
+                value="male"
+                required
+              />
+              Male
+            </label>
+            <label>
+              <input type="radio" id="female" name="gender" value="female" />
+              Female
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Languages Known:</label>
+          <div class="checkbox-group">
+            <label>
+              <input
+                type="checkbox"
+                id="language1"
+                name="languages"
+                value="english"
+              />
+              English
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                id="language2"
+                name="languages"
+                value="hindi"
+              />
+              Hindi
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                id="language3"
+                name="languages"
+                value="telugu"
+              />
+              Telugu
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                id="language4"
+                name="languages"
+                value="kannada"
+              />
+              Kannada
+            </label>
+          </div>
+        </div>
+        <div class="form-group form-group-submit">
+          <input type="reset" value="Cancel" class="secondary-button" />
+          <input type="submit" value="Submit" class="primary-button" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
