@@ -1,0 +1,132 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+}
+.form-container {
+  text-align: left;
+  width: 400px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+}
+.form-container h2 {
+  text-align: center;
+}
+.form-container .form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.form-container .form-group label {
+  flex: 0 0 120px;
+  margin-right: 10px;
+}
+.form-container .form-group input[type="text"],
+.form-container .form-group input[type="email"],
+.form-container .form-group input[type="password"],
+.form-container .form-group select {
+  flex: 1;
+  padding: 8px;
+}
+.form-container .form-group .radio-group {
+  display: flex;
+  align-items: center;
+}
+.form-container .form-group .checkbox-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.form-container .form-group .radio-group label,
+.form-container .form-group .checkbox-group label {
+  margin-right: 20px;
+}
+.form-container .form-group .radio-group input,
+.form-container .form-group .checkbox-group input {
+  margin-right: 5px;
+}
+.form-container .form-group .checkbox-group {
+  flex-direction: row;
+}
+.form-container .form-group .checkbox-group label {
+  width: 50%;
+  margin-bottom: 10px;
+}
+.form-container .form-group-submit {
+  display: flex;
+  justify-content: space-between;
+}
+.form-container .password-info {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 5px;
+}
+.form-container .password-info:hover .password-tooltip {
+  display: block;
+}
+.form-container .password-tooltip {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 250px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  cursor: pointer;
+}
+.form-container .password-tooltip ul {
+  margin: 0;
+  padding-left: 20px;
+}
+.form-container .password-tooltip ul li {
+  list-style-type: disc;
+}
+.required {
+  color: red;
+}
+.primary-button {
+  background-color: #275fcf;
+  color: #fff;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.secondary-button {
+  background-color: #6c757d;
+  color: #fff;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+table {
+  width: 100%;
+  margin-bottom: 20px;
+  border-collapse: collapse;
+}
+table,
+th,
+td {
+  border: 1px solid #ddd;
+}
+th,
+td {
+  padding: 8px;
+  text-align: left;
+}
+th {
+  background-color: #f2f2f2;
+}
+.error {
+  color: red;
+  margin-top: 5px;
+}
