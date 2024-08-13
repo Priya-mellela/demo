@@ -1,4 +1,5 @@
-# demo
+# Web development
 
-new repo
-priya
+This is a user registration portal 
+
+No duplicates emails are allowed 
