@@ -2,20 +2,20 @@
 <html>
   <head>
     <title>Form Validations</title>
-   <link href="style1.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
   </head>
-    <body>
+  <body>
     <div class="form-container">
-    
-    
-      
-      
-      
-      
-      
-      
-      
-      
+      <table id="userTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>State</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
       <h2>Registration Form</h2>
       <form id="registrationForm">
         <div class="form-group">
@@ -25,7 +25,7 @@
         <div class="form-group">
           <label for="email">Email:<span class="required">*</span></label>
           <input type="email" id="email" name="email" required />
-          
+          <div id="emailError" class="error"></div>
         </div>
         <div class="form-group">
           <label for="password">Password:<span class="required">*</span></label>
@@ -39,7 +39,7 @@
             title="Password must contain: minimum 8 characters, at least one uppercase letter, one lowercase letter, one number, and one special character."
           />
           <div class="password-info">
-            &#9432;
+            ℹ️
             <div class="password-tooltip">
               <ul>
                 <li>Password should contain minimum 8 characters</li>
@@ -55,11 +55,11 @@
           <label for="state">State:</label>
           <select id="state" name="state" required>
             <option value="">Select a state</option>
-            <option value="s1">Telangana</option>
-            <option value="s2">Karnataka</option>
-            <option value="s3">Maharashtra</option>
-            <option value="s4">Tamil Nadu</option>
-            <option value="s5">Kerala</option>
+            <option value="Telangana">Telangana</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Tamil Nadu">Tamil Nadu</option>
+            <option value="Kerala">Kerala</option>
           </select>
         </div>
         <div class="form-group">
@@ -129,5 +129,5 @@
       </form>
     </div>
   </body>
-
+  <script src="validations.js"></script>
 </html>
